@@ -1,7 +1,22 @@
-# set variables 
+def main():
+        lst = ['sh', 'gl', 'ch', 'ph', 'tr', 'br', 'fr', 'bl', 'gr', 'st', 'sl', 'cl', 'pl', 'fl']
+        sentence = input('What would you like to be translated into pig-latin: ')
+        sentence = sentence.split()
+        for k in range(len(sentence)):
+                i = sentence[k]
+                if i[0] in ['a', 'e', 'i', 'o', 'u']:
+                        sentence[k] = i+'ay'
+                elif t(i) in lst:
+                        sentence[k] = i[2:]+i[:2]+'ay'
+                elif i.isalpha() == False:
+                        sentence[k] = i
+                else:
+                        sentence[k] = i[1:]+i[0]+'ay'
+        return ' '.join(sentence)
 
-ay = ‘ay’
-way = ‘way’
-consonant = (‘b’,’c’,’d’,’f’,’g’,’h’,’j’,’k’,’l’,’m’,’n’,’p’,’q’,’r’,’s’,’t’,’y’,’v’,’x’,’z’)
-vowel = (‘a’,’e’,’i’,’o’,’u’)
+def t(str):
+        return str[0]+str[1]
 
+if __name__ == "__main__":
+        x = main()
+        print(x)
